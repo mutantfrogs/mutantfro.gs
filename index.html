@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>website</title>
+        <meta charset="UTF-8">
+        <style>
+            h1 {
+                text-align: center;
+                font-size: 40px;
+                font-family: monospace, monospace;
+                margin-bottom: 0px;
+            }
+
+            h2 {
+                text-align: center;
+                font-size: 40px;
+                font-family: monospace, monospace;
+            }
+
+            a {
+                text-align: center;
+                display: block;
+                font-family: monospace, monospace;
+                margin-bottom: 15px;
+            }
+            
+            div{ 
+                text-align:center; 
+            }
+            
+            button {
+            padding: 0;
+            border: 0;
+            margin: 0;
+            background: none;
+            align-self: auto;
+            }
+            
+        </style>
+    </head>
+
+    <body>
+
+        <h2 style="font-size: 70px;"> mutantfrogs</h1>
+
+        <h1>2023</h1>
+        <a href="assets2/thumbnails/911.png">sketches</a>
+        <div id="2023" ></div>       
+        <h1>2022</h1>
+        <a href="assets2/thumbnails/911.png">sketches</a>
+        <div id="2022" ></div>
+        <h1>2021</h1>
+        <a href="assets2/thumbnails/911.png">sketches</a>
+        <div id="2021" ></div>
+        <h1>2020</h1>
+        <a href="assets2/thumbnails/911.png">sketches</a>
+        <div id="2020" ></div>
+        <h1>2019</h1>
+        <a href="assets2/thumbnails/911.png">sketches</a>
+        <div id="2019" ></div>
+        
+        
+        <script>
+            const array = [
+            {id: "911", url: "assets2/911.png", thumburl: "assets2/thumbnails/911.png", year: 2022, nsfw: true},
+            {id: "alien", url: "assets2/alien.png", thumburl: "assets2/thumbnails/alien.png", year: 2021, nsfw: false},
+            {id: "ankha", url: "assets2/ankha.png", thumburl: "assets2/thumbnails/ankha.png", year: 2021, nsfw: false},
+            {id: "apple", url: "assets2/apple.png", thumburl: "assets2/thumbnails/apple.png", year: 2021, nsfw: false},
+            {id: "arm", url: "assets2/arm.png", thumburl: "assets2/thumbnails/arm.png", year: 2020, nsfw: false},
+            {id: "bazel", url: "assets2/bazel.png", thumburl: "assets2/thumbnails/bazel.png", year: 2021, nsfw: true},
+            {id: "beach", url: "assets2/beach.png", thumburl: "assets2/thumbnails/beach.png", year: 2022, nsfw: false},
+            {id: "boots", url: "assets2/boots.png", thumburl: "assets2/thumbnails/boots.png", year: 2020, nsfw: false},
+            {id: "candleman", url: "assets2/candleman.png", thumburl: "assets2/thumbnails/candleman.png", year: 2020, nsfw: false},
+            {id: "charge", url: "assets2/charge.png", thumburl: "assets2/thumbnails/charge.png", year: 2021, nsfw: false},
+            {id: "clown", url: "assets2/clown.png", thumburl: "assets2/thumbnails/clown.png", year: 2020, nsfw: false},
+            {id: "clownms", url: "assets2/clownms.png", thumburl: "assets2/thumbnails/clownms.png", year: 2022, nsfw: false},
+            {id: "crab", url: "assets2/crab.png", thumburl: "assets2/thumbnails/crab.png", year: 2022, nsfw: false},
+            {id: "critic", url: "assets2/critic.png", thumburl: "assets2/thumbnails/critic.png", year: 2021, nsfw: false},
+            {id: "dioxideDTIYS", url: "assets2/dioxideDTIYS.png", thumburl: "assets2/thumbnails/dioxideDTIYS.png", year: 2023, nsfw: false},
+            {id: "dog", url: "assets2/dog.png", thumburl: "assets2/thumbnails/dog.png", year: 2020, nsfw: false},
+            {id: "dream", url: "assets2/dream.png", thumburl: "assets2/thumbnails/dream.png", year: 2022, nsfw: false},
+            {id: "elephant", url: "assets2/elephant.png", thumburl: "assets2/thumbnails/elephant.png", year: 2022, nsfw: false},
+            {id: "godzilla", url: "assets2/godzilla.png", thumburl: "assets2/thumbnails/godzilla.png", year: 2021, nsfw: false},
+            {id: "herja", url: "assets2/herja.png", thumburl: "assets2/thumbnails/herja.png", year: 2021, nsfw: false},
+            {id: "joker", url: "assets2/joker.png", thumburl: "assets2/thumbnails/joker.png", year: 2021, nsfw: false},
+            {id: "jungle", url: "assets2/jungle.png", thumburl: "assets2/thumbnails/jungle.png", year: 2021, nsfw: false},
+            {id: "marketing1", url: "assets2/marketing1.png", thumburl: "assets2/thumbnails/marketing1.png", year: 2021, nsfw: false},
+            {id: "marketing2", url: "assets2/marketing2.png", thumburl: "assets2/thumbnails/marketing2.png", year: 2021, nsfw: false},
+            {id: "mary", url: "assets2/mary.png", thumburl: "assets2/thumbnails/mary.png", year: 2022, nsfw: false},
+            {id: "monster", url: "assets2/monster.png", thumburl: "assets2/thumbnails/monster.png", year: 2021, nsfw: false},
+            {id: "mspaint", url: "assets2/mspaint.png", thumburl: "assets2/thumbnails/mspaint.png", year: 2021, nsfw: false},
+            {id: "mspaint2", url: "assets2/mspaint2.png", thumburl: "assets2/thumbnails/mspaint2.png", year: 2021, nsfw: false},
+            {id: "nether", url: "assets2/nether.png", thumburl: "assets2/thumbnails/nether.png", year: 2021, nsfw: false},
+            {id: "puppet", url: "assets2/puppet.png", thumburl: "assets2/thumbnails/puppet.png", year: 2019, nsfw: false},
+            {id: "shower", url: "assets2/shower.png", thumburl: "assets2/thumbnails/shower.png", year: 2022, nsfw: false},
+            {id: "sky", url: "assets2/sky.png", thumburl: "assets2/thumbnails/sky.png", year: 2021, nsfw: false},
+            {id: "slug", url: "assets2/slug.png", thumburl: "assets2/thumbnails/slug.png", year: 2019, nsfw: false},
+            {id: "tammy", url: "assets2/tammy.png", thumburl: "assets2/thumbnails/tammy.png", year: 2020, nsfw: false},
+            {id: "toaster", url: "assets2/toaster.png", thumburl: "assets2/thumbnails/toaster.png", year: 2021, nsfw: false},
+            {id: "toolz", url: "assets2/toolz.png", thumburl: "assets2/thumbnails/toolz.png", year: 2021, nsfw: false},
+            {id: "troll", url: "assets2/troll.png", thumburl: "assets2/thumbnails/troll.png", year: 2023, nsfw: false},
+            {id: "vent", url: "assets2/vent.png", thumburl: "assets2/thumbnails/vent.png", year: 2022, nsfw: false},
+            {id: "watcher", url: "assets2/watcher.png", thumburl: "assets2/thumbnails/watcher.png", year: 2020, nsfw: false},
+            {id: "woods", url: "assets2/woods.png", thumburl: "assets2/thumbnails/woods.png", year: 2019, nsfw: false},
+            {id: "xphill", url: "assets2/xphill.png", thumburl: "assets2/thumbnails/xphill.png", year: 2022, nsfw: false},
+
+            {id: "dragon", url: "assets2/dragon.png", thumburl: "assets2/thumbnails/dragon.png", year: 2022, nsfw: false},
+            {id: "emotions", url: "assets2/emotions.png", thumburl: "assets2/thumbnails/emotions.png", year: 2022, nsfw: false},
+            {id: "march", url: "assets2/march.png", thumburl: "assets2/thumbnails/march.png", year: 2020, nsfw: false},
+            {id: "skull", url: "assets2/skull.png", thumburl: "assets2/thumbnails/skull.png", year: 2022, nsfw: false},
+            {id: "leaf", url: "assets2/leaf.png", thumburl: "assets2/thumbnails/leaf.png", year: 2022, nsfw: false},
+            {id: "candle", url: "assets2/candle.png", thumburl: "assets2/thumbnails/candle.png", year: 2023, nsfw: false},
+            {id: "board", url: "assets2/board.png", thumburl: "assets2/thumbnails/board.png", year: 2022, nsfw: false},
+            {id: "selfportrait", url: "assets2/selfportrait.png", thumburl: "assets2/thumbnails/selfportrait.png", year: 2022, nsfw: false}
+            ];
+
+            for(let i = 0; i <= (array.length - 1); i++){
+                // make button and assign it an id
+                const button = document.createElement("button")
+                button.id=array[i].id;
+                
+                // grab thumbnail for button and attach it
+                const img = document.createElement("img");
+                img.src = (array[i].thumburl);
+                button.appendChild(img);
+
+                // passes button id when clicked
+                button.onclick= function() { click(this.id); };
+
+                // appends button to page into different divs by year
+                switch(array[i].year)
+                {
+                    case 2019:
+                    const div2019 = document.getElementById("2019"); 
+                        div2019.appendChild(button);
+                        break;
+
+                    case 2020:
+                    const div2020 = document.getElementById("2020");
+                        div2020.appendChild(button);
+                        break;
+
+                    case 2021:
+                    const div2021 = document.getElementById("2021");
+                        div2021.appendChild(button);
+                        break;
+
+                    case 2022:
+                    const div2022 = document.getElementById("2022");
+                        div2022.appendChild(button);
+                        break;
+
+                    case 2023:
+                    const div2023 = document.getElementById("2023");
+                        div2023.appendChild(button);
+                        break;
+                }
+            }     
+            
+            // onclick function, redirects to full image by finding the url in the object with matching id
+            function click(btnid) {
+                let indexMatch = array.findIndex(indexMatch => indexMatch.id === btnid);
+                let newurl = array[indexMatch].url;
+
+                window.location.href="" + newurl;
+            };
+            
+        </script>
+    </body>
+</html>
