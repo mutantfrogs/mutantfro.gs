@@ -92,7 +92,7 @@
     </head>
 
     <body>
-        <div id="overlay" onclick="off()">
+        <div id="overlay" onclick="off(event)">
             <button onclick="changeIndexLeft()" style="left: 10px" class="arrows"> <- </button>
             <img id="fullscreenImage" src="" alt=""> 
             <button onclick="changeIndexRight()" style="right: 10px" class="arrows"> -> </button>
@@ -222,9 +222,12 @@
                 document.getElementById("overlay").style.display = "block";
             };
 
-            function off() {
-                //document.getElementById("overlay").style.display = "none";
-                //document.getElementById("fullscreenImage").src = "";
+            function off(event) {
+                const targetElement = event.target;
+                if (targetElement.id === "overlay") {
+                    document.getElementById("overlay").style.display = "none";
+                    document.getElementById("fullscreenImage").src = "";
+                 }
             }
 
             function changeIndexLeft(){
